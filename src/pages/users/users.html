@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Usuários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="user-list">
+    <ion-item class="user-item" *ngFor="let user of users" 
+              [class.selected]="user === selectedUser" 
+              (click)="openSettings(user)">
+      <ion-avatar class="user-avatar">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label class="user-name">{{user.name}}
+      </ion-label>    
+    </ion-item>
+  </ion-list>
+</ion-content>

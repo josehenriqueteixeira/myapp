@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Photos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 *ngFor="let photo of photos"
+              [class.selected]="photo === selectedPhoto"
+              (click)="openSettings(photo)">
+        <img src="{{ photo.url }}">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
