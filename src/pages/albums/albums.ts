@@ -26,13 +26,17 @@ export class AlbumsPage implements OnInit {
   }
 
   ngOnInit() {
-    this._albums.getAlbums(this.user_id).subscribe(albums => this.albums = albums);
+    this.getAlbums();
   }
 
   goToOtherPage(album: Albums){
     this.navCtrl.push(PhotosPage, { 
       photo: album.id
     });
+  }
+
+  getAlbums(){
+    this._albums.getAlbums(this.user_id).subscribe(albums => this.albums = albums);
   }
 
 }
