@@ -6,21 +6,18 @@ import { NavControllerMock } from '../../mocks/NavControllerMock';
 import { ModalControllerMock } from '../../mocks/ModalControllerMock';
 import { UsersService } from '../../service/users';
 import { UsersMock } from '../../mocks/UsersMock';
-import { UsersDetailsComponent } from '../../components/users-details/users-details';
+import { UsersDetailsComponent } from '../users-details/users-details';
+import { PhotoDetailsComponent } from './photo-details';
 
-describe('Users Details Component', () => {
-  let component: UsersDetailsComponent;
-  let fixture: ComponentFixture<UsersDetailsComponent>;
+fdescribe('Users Details Component', () => {
+  let component: PhotoDetailsComponent;
+  let fixture: ComponentFixture<PhotoDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersDetailsComponent ],
+      declarations: [ PhotoDetailsComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        { 
-          provide: UsersService, 
-          useValue: new UsersMock
-        },
         {
           provide: NavParams,
           useValue: new NavParamsMock
@@ -28,18 +25,14 @@ describe('Users Details Component', () => {
         {
           provide: NavController,
           useValue: new NavControllerMock
-        },
-        {
-          provide: ModalController,
-          useValue: new ModalControllerMock
-        },
+        }
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsersDetailsComponent);
+    fixture = TestBed.createComponent(PhotoDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -56,10 +56,4 @@ describe('AlbumsPage', () => {
     expect(listAlbums.textContent).toContain('1 - Teste 1');
   });
 
-  // it('photo modal selected show', () =>{
-  //   component.getAlbums();
-  //   fixture.detectChanges();
-  // });
-
-
 });

@@ -4,11 +4,10 @@ import { UsersPage } from '../users/users';
 import { NavParams, NavController, ModalController, Item } from 'ionic-angular';
 import { NavParamsMock } from '../../mocks/NavParamsMock';
 import { NavControllerMock } from '../../mocks/NavControllerMock';
-import { ModalControllerMock } from '../../mocks/ModalControllerMock';
+import { ModalControllerMock, Modal } from '../../mocks/ModalControllerMock';
 import { UsersService } from '../../service/users';
 import { UsersMock } from '../../mocks/UsersMock';
 import { By } from '@angular/platform-browser';
-import { UsersDetailsComponent } from '../../components/users-details/users-details';
 
 describe('Users Page', () => {
   let component: UsersPage;
@@ -74,18 +73,7 @@ describe('Users Page', () => {
     const modalCtrlSpy = jasmine.createSpyObj('ModalController', ['create']);
     modalCtrlSpy.create.and.callFake(function(){
       return ModalControllerMock;      
-    })    
+    })
   });
-
-  it('modal show', () => {
-    // let el = fixture.debugElement.query(By.css('ion-item')).nativeElement;
-    // expect(el.classList.has('user-item')).toBe(false);
-
-    // component.openSettings(UsersMock[0]);
-    // expect(el.classList.has('user-item')).toBe(true);
-    // console.log(el.classList.has())
-
-
-  })
 
 });
