@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavParams, NavController } from 'ionic-angular';
-import { Users } from '../../interfaces/users';
+import { User } from '../../interfaces/users';
 import { AlbumsPage } from '../../pages/albums/albums';
 
 @Component({
   selector: 'users-details',
   templateUrl: 'users-details.html'
 })
-export class UsersDetailsComponent implements OnInit{
+export class UsersDetailsComponent {
   
-  user_info: Users;
+  user_info: User;
   
   constructor(
     public params: NavParams,

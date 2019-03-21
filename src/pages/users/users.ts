@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Users } from '../../interfaces/users';
+import { User } from '../../interfaces/users';
 import { UsersService } from '../../service/users';
 import { UsersDetailsComponent } from '../../components/users-details/users-details';
 import { ModalController } from 'ionic-angular';
@@ -12,8 +12,8 @@ import { ModalController } from 'ionic-angular';
 })
 export class UsersPage implements OnInit {
 
-  public users: Array<Users>;
-  selectedUser: Users;
+  public users: Array<User>;
+  selectedUser: User;
 
   constructor(
     public navCtrl: NavController, 
@@ -30,7 +30,7 @@ export class UsersPage implements OnInit {
     this.getUsers();
   }
 
-  openSettings(user: Users) {
+  openSettings(user: User) {
       this.selectedUser = user;
       let modal = this.modalCtrl.create(UsersDetailsComponent, {
         user_info: this.selectedUser     

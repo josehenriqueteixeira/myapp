@@ -1,0 +1,10 @@
+<h3 *ngIf="userAvatar">Avatar</h3>
+<p *ngIf="!userAvatar">
+    Carregando...
+</p>
+<ion-item *ngIf="userAvatar">
+    Firstname: {{ userAvatar.first_name }}
+    Lastname: {{ userAvatar.first_name }}
+    <img [src]="userAvatar.avatars[0].url" />
+</ion-item>
+<button>Teste</button>

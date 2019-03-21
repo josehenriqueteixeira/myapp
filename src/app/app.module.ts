@@ -12,13 +12,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsersPage } from '../pages/users/users';
 import { HttpClientModule }    from '@angular/common/http';
 import { UsersService } from '../service/users';
-import { UsersDetailsComponent } from '../components/users-details/users-details';
 import { AlbumsService } from '../service/albums';
 import { AlbumsPage } from '../pages/albums/albums';
 import { PhotosPage } from '../pages/photos/photos';
 import { PhotosService } from '../service/photos';
-import { PhotoDetailsComponent } from '../components/photo-details/photo-details';
-
+import { UsersAvatarPage } from '../pages/usersAvatar/users-avatar';
+import { UsersAvatarService } from '../service/users-avatar';
 
 @NgModule({
   declarations: [
@@ -26,10 +25,9 @@ import { PhotoDetailsComponent } from '../components/photo-details/photo-details
     HomePage,
     ListPage,
     UsersPage,
-    UsersDetailsComponent,
     AlbumsPage,
     PhotosPage,
-    PhotoDetailsComponent
+    UsersAvatarPage
   ],
   imports: [
     BrowserModule,
@@ -42,10 +40,9 @@ import { PhotoDetailsComponent } from '../components/photo-details/photo-details
     HomePage,
     ListPage,
     UsersPage,
-    UsersDetailsComponent,
+    UsersAvatarPage,
     AlbumsPage,
-    PhotosPage,
-    PhotoDetailsComponent
+    PhotosPage
   ],
   providers: [
     StatusBar,
@@ -53,6 +50,7 @@ import { PhotoDetailsComponent } from '../components/photo-details/photo-details
     UsersService,
     AlbumsService,
     PhotosService,
+    UsersAvatarService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -8,6 +8,7 @@ import { ModalControllerMock, Modal } from '../../mocks/ModalControllerMock';
 import { UsersService } from '../../service/users';
 import { UsersMock } from '../../mocks/UsersMock';
 import { By } from '@angular/platform-browser';
+import { User } from '../../interfaces/users';
 
 describe('Users Page', () => {
   let component: UsersPage;
@@ -55,15 +56,8 @@ describe('Users Page', () => {
     expect(component.users[0].id).toBe(1);
   });  
 
-  it('list users show', () => {
-    component.getUsers();
-    fixture.detectChanges();
-    let listUsers: HTMLElement = fixture.nativeElement.querySelectorAll('ion-label')[0];
-    expect(listUsers.textContent).toContain('jose henrique');
-  })
-
   it('Click item', () => {
-    let clickItem = component;
+    let clickItem = component.selectedUser;
     spyOn(clickItem, 'openSettings').and.callThrough();   
     let el = fixture.debugElement.query(By.css('ion-item'));
     el.triggerEventHandler('click', null);

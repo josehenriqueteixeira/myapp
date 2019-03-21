@@ -38,7 +38,7 @@ describe('Photo details page', () => {
     expect(component).toBeTruthy();
   });
 
-  it('test component user info', () => {
+  it('test component photo url', () => {
     component.url_photo = 'teste.com.br'
     fixture.detectChanges();
     let show_url_photo: HTMLElement = fixture.nativeElement.querySelector('img');

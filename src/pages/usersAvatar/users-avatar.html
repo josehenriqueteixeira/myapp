@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Usuários</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ng-container *ngFor="let useravatar of usersavatars">
+            <users-avatar-item [userAvatar]="useravatar"></users-avatar-item>
+        </ng-container>
+    </ion-list>
+</ion-content>

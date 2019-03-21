@@ -15,10 +15,4 @@ export class Modal {
 		});
 	}
 
-	public onDidDismiss() {
-		return new Promise((resolve: Function) => {
-			resolve();
-		});
-	}
-
 }

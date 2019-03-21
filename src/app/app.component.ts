@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { UsersPage } from '../pages/users/users';
+import { UsersAvatarPage } from '../pages/usersAvatar/users-avatar';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,10 @@ export class MyApp {
       { 
         title: 'Users', 
         component: UsersPage,        
+      },
+      { 
+        title: 'UsersAvatar', 
+        component: UsersAvatarPage,        
       }
     ];
 

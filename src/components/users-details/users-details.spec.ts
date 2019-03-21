@@ -39,7 +39,7 @@ describe('Photo details page', () => {
   });
 
   it('test component user info', () => {
-    component.user_info = {
+    const teste = component.user_info = {
       id: 1,
       name: 'jose henrique',
       username: 'josehteixeira10',

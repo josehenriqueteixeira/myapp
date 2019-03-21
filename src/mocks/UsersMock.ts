@@ -1,10 +1,10 @@
-import { Users } from '../interfaces/users'
+import { User } from '../interfaces/users'
 import { Observable } from 'rxjs';
 import { ModalController } from 'ionic-angular';
 import { UsersDetailsComponent } from '../components/users-details/users-details';
 
 export class UsersMock{
-    public users: Array<Users> = [
+    public users: Array<User> = [
         {
             id: 1,
             name: 'jose henrique',
@@ -53,16 +53,16 @@ export class UsersMock{
         },
     ];
 
-    getUsers(): Observable<Users[]>{    
-        return new Observable<Users[]>(observer => {
+    getUsers(): Observable<User[]>{    
+        return new Observable<User[]>(observer => {
             observer.next(this.users);
         });
     }
 
-    selectedUser: Users;
+    selectedUser: User;
     public modalCtrl: ModalController
 
-    openSettings(user: Users) {
+    openSettings(user: User) {
         this.selectedUser = user;
         let modal = this.modalCtrl.create(UsersDetailsComponent, {
           user_info: this.selectedUser     
