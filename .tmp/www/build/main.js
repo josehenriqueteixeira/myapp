@@ -333,6 +333,7 @@ var AlbumsPage = /** @class */ (function () {
         console.log('ionViewDidLoad AlbumsPage');
     };
     AlbumsPage.prototype.ngOnInit = function () {
+        this.getAlbums();
     };
     AlbumsPage.prototype.goToOtherPage = function (album) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__photos_photos__["a" /* PhotosPage */], {

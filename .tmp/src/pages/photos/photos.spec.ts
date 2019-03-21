@@ -7,6 +7,7 @@ import { NavParamsMock } from '../../mocks/NavParamsMock';
 import { PhotosService } from '../../service/photos';
 import { NavControllerMock } from '../../mocks/NavControllerMock';
 import { ModalControllerMock } from '../../mocks/ModalControllerMock';
+import { By } from '@angular/platform-browser';
 
 describe('PhotosPage', () => {
   let component: PhotosPage;
@@ -58,14 +59,27 @@ describe('PhotosPage', () => {
     component.getPhotos();
     fixture.detectChanges();
     let listPhotos: HTMLElement = fixture.nativeElement.querySelectorAll('ion-col')[0];
-    // verificar
   });
 
   it('photo modal selected show', () =>{
+    // verificar
     component.getPhotos();
-    fixture.detectChanges();
+    fixture.detectChanges();    
     let listPhotos: HTMLElement = fixture.nativeElement.querySelectorAll('ion-col')[0];
-    console.log(component);
+  });
+
+  it('Click photo', () => {
+    let clickItem = component;
+    spyOn(clickItem, 'openSettings').and.callThrough(); 
+    let el = fixture.debugElement.query(By.css('ion-col'));
+    el.triggerEventHandler('click', null);
+    expect(clickItem.openSettings).toHaveBeenCalled();
+    fixture.detectChanges();
+    const ModalControllerMock = jasmine.createSpyObj('openSettings',['present']);
+    const modalCtrlSpy = jasmine.createSpyObj('ModalController', ['create']);
+    modalCtrlSpy.create.and.callFake(function(){
+      return ModalControllerMock;      
+    })    
   });
 
 });

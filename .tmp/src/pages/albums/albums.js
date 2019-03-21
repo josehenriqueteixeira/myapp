@@ -22,6 +22,7 @@ var AlbumsPage = /** @class */ (function () {
         console.log('ionViewDidLoad AlbumsPage');
     };
     AlbumsPage.prototype.ngOnInit = function () {
+        this.getAlbums();
     };
     AlbumsPage.prototype.goToOtherPage = function (album) {
         this.navCtrl.push(PhotosPage, {

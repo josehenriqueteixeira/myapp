@@ -26,7 +26,7 @@ export class AlbumsPage implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.getAlbums();
   }
 
   goToOtherPage(album: Albums){

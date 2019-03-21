@@ -5,9 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-// import { UsersDetailsComponent } from './users-details/users-details';
-// // import { AlbumsPage } from '../pages/albums/albums';
-// import { PhotoDetailsComponent } from './photo-details/photo-details';
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
     }
