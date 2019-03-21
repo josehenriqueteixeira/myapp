@@ -38,7 +38,7 @@ describe('Photo details page', () => {
     expect(component).toBeTruthy();
   });
 
-  it('testes', () => {
+  it('test component user info', () => {
     component.user_info = {
       id: 1,
       name: 'jose henrique',

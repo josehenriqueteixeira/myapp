@@ -74,7 +74,7 @@ describe('PhotosPage', () => {
     let el = fixture.debugElement.query(By.css('ion-col'));
     el.triggerEventHandler('click', null);
     expect(clickItem.openSettings).toHaveBeenCalled();
-    fixture.detectChanges();
+    fixture.detectChanges();    
     const ModalControllerMock = jasmine.createSpyObj('openSettings',['present']);
     const modalCtrlSpy = jasmine.createSpyObj('ModalController', ['create']);
     modalCtrlSpy.create.and.callFake(function(){
