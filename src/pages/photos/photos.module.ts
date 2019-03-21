@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [
-  ],
-  imports: [
-  ],
+  declarations: [],
+  imports: [],
 })
 export class PhotosPageModule {}

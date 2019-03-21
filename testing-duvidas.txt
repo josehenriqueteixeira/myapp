@@ -1,2 +1,10 @@
-Modal testing e eventos - verificar
-Navigation testing - verificar
+Modal testing e eventos - verificar = mock (verificar exemplo)
+
+Navigation testing - verificar = navigation mock (jeito correto)
+
+users-details - teste de componentes. - teste feito na página? 
+ou realiza um teste no próprio componente ( ou os dois? )
+
+NavController = Mock
+
+testes? 

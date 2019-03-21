@@ -59,7 +59,7 @@ describe('Users Page', () => {
     component.getUsers();
     fixture.detectChanges();
     let listUsers: HTMLElement = fixture.nativeElement.querySelectorAll('ion-label')[0];
-    expect(listUsers.textContent).toContain('jose henrique')
+    expect(listUsers.textContent).toContain('jose henrique');
   })
 
   it('Click item', () => {

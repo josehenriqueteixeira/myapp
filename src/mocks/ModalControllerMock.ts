@@ -1,6 +1,3 @@
-import { ModalController } from "ionic-angular";
-
-
 export class ModalControllerMock {
 
     create(): Modal {

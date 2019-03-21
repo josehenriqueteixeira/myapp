@@ -35,7 +35,7 @@ export class PhotosPage implements OnInit{
   openSettings(photos: Photos) {
     this.selectedPhoto = photos;
     let modal = this.modalCtrl.create(PhotoDetailsComponent, {
-      url_photo: this.selectedPhoto.url 
+      url_photo: this.selectedPhoto.url
     });
     modal.present();
   }
