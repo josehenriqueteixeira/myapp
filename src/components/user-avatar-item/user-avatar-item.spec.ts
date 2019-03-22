@@ -66,7 +66,6 @@ describe('UsersAvatarItem', () => {
   });
 
   it('show avatar', () => {
-    component.userAvatar = UsersAvatarMock
     component.userAvatar = USERAVATAR;
     fixture.detectChanges();
     let el: HTMLElement = fixture.nativeElement.querySelector('ion-item');

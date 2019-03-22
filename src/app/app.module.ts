@@ -18,7 +18,7 @@ import { PhotosPage } from '../pages/photos/photos';
 import { PhotosService } from '../service/photos';
 import { UsersAvatarPage } from '../pages/usersAvatar/users-avatar';
 import { UsersAvatarService } from '../service/users-avatar';
-import { UserListComponent } from '../components/users-list/users-list';
+// import { UserListComponent } from '../components/users-list/users-list';
 import { UsersAvatarItemComponent } from '../components/user-avatar-item/user-avatar-item';
 import { UsersDetailsComponent } from '../components/users-details/users-details';
 
@@ -31,7 +31,7 @@ import { UsersDetailsComponent } from '../components/users-details/users-details
     AlbumsPage,
     PhotosPage,
     UsersAvatarPage,
-    UserListComponent,
+    // UserListComponent,
     UsersAvatarItemComponent,
     UsersDetailsComponent
   ],
@@ -49,7 +49,7 @@ import { UsersDetailsComponent } from '../components/users-details/users-details
     UsersAvatarPage,
     AlbumsPage,
     PhotosPage,
-    UserListComponent, 
+    // UserListComponent, 
     UsersAvatarItemComponent,
     UsersDetailsComponent
   ],
