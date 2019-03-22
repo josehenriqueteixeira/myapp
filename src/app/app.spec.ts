@@ -1,39 +1,72 @@
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { UsersDetailsComponent } from './users-details';
-// import { NavParams, NavController } from 'ionic-angular';
-// import { NavParamsMock } from '../../mocks/NavParamsMock';
-// import { NavControllerMock } from '../../mocks/NavControllerMock';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { StatusBar } from '@ionic-native/status-bar';
+import { MyApp } from './app.component';
+import { Platform } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
-// describe('Photo details page', () => {
-//   let component: UsersDetailsComponent
-//   let fixture: ComponentFixture<UsersDetailsComponent>;
+describe('MyApp', () => {
+    let component: MyApp;
+    let fixture: ComponentFixture<MyApp>;
+    let platformSpy, platformReadySpy, statusBarSpy, splashScreenSpy;
+    
+    beforeEach(async(() => {
+        statusBarSpy = jasmine.createSpyObj('StatusBar', ['styleDefault']);
+        splashScreenSpy = jasmine.createSpyObj('SplashScreen', ['hide']);
+        platformReadySpy = Promise.resolve();
+        platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ UsersDetailsComponent ],
-//       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-//       providers: [
-//         {
-//           provide: NavParams,
-//           useValue: new NavParamsMock
-//         },
-//         {
-//           provide: NavController,
-//           useValue: new NavControllerMock
-//         }
-//       ]
-//     })
-//     .compileComponents();
-//   }));
+        TestBed.configureTestingModule({
+            declarations:[ MyApp ],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            providers: [
+                {
+                    provide: Platform,
+                    useValue: platformSpy
+                },
+                {
+                    provide: StatusBar, 
+                    useValue: statusBarSpy
+                },
+                {
+                    provide: SplashScreen,
+                    useValue: splashScreenSpy
+                }
+            ],
+        })
+        .compileComponents();
+    }));
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(UsersDetailsComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(MyApp);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
+    it('should create the app', async () => {
+        const fixture = TestBed.createComponent(MyApp);
+        const app = fixture.debugElement.componentInstance;
+        expect(app).toBeTruthy();
+    });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
+    it('should initialize the app', async () => {
+        TestBed.createComponent(MyApp);
+        expect(platformSpy.ready).toHaveBeenCalled();
+        await platformReadySpy;
+        expect(statusBarSpy.styleDefault).toHaveBeenCalled();
+        expect(splashScreenSpy.hide).toHaveBeenCalled();
+      });
+
+      it('should have menu labels', async () => {
+        const fixture = await TestBed.createComponent(MyApp);
+        await fixture.detectChanges();
+        const app = fixture.nativeElement;
+        const menuItems = app.querySelectorAll('button');
+        expect(menuItems.length).toEqual(4);
+        expect(menuItems[0].textContent).toContain('Home');
+        expect(menuItems[1].textContent).toContain('List');
+        expect(menuItems[2].textContent).toContain('Users');
+        expect(menuItems[3].textContent).toContain('UsersAvatar');
+      });
+
+});

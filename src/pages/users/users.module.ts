@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { UsersDetailsComponent } from '../../components/users-details/users-details';
-import { UserListComponent } from '../../components/users-list/users-list';
+
 
 @NgModule({
-  declarations: [ UsersDetailsComponent, UserListComponent ],
+  declarations: [],
   imports: [],
-  entryComponents: [ UsersDetailsComponent, UserListComponent ]
+  exports: [],
 })
 
 export class UsersPageModule {}

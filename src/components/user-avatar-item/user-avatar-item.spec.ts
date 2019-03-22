@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserAvatar } from '../../interfaces/user-avatar';
 import { UsersAvatarItemComponent } from '../../components/user-avatar-item/user-avatar-item'
+import { UsersAvatarMock } from '../../mocks/UsersAvatarMock';
 
 const USERAVATAR: UserAvatar = {
     "avatars": [
@@ -48,7 +49,7 @@ describe('UsersAvatarItem', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UsersAvatarItemComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
@@ -65,6 +66,7 @@ describe('UsersAvatarItem', () => {
   });
 
   it('show avatar', () => {
+    component.userAvatar = UsersAvatarMock
     component.userAvatar = USERAVATAR;
     fixture.detectChanges();
     let el: HTMLElement = fixture.nativeElement.querySelector('ion-item');

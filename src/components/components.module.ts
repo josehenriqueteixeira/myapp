@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 	declarations: [],
 	imports: [],
 	exports: [], 
-	providers:[
-
-	]
+	providers:[]
 })
 export class ComponentsModule {}

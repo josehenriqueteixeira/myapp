@@ -39,7 +39,7 @@ describe('Photo details page', () => {
   });
 
   it('test component photo url', () => {
-    component.url_photo = 'teste.com.br'
+    component.url_photo = 'teste.com.br';
     fixture.detectChanges();
     let show_url_photo: HTMLElement = fixture.nativeElement.querySelector('img');
   });

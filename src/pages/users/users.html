@@ -7,10 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding *ngFor="let user of users" 
+<!-- <ion-content padding *ngFor="let user of users" 
       [class.selected]="user === selectedUser" 
-      (click)="openSettings(user)">
+      (click)="openSettings(user)"> -->
+      
+<ion-content>
   <ion-list class="user-list">
-    <users-list [name]="selectedUser.name"></users-list>
+    <ng-container *ngFor="let user of users">
+      <users-list [userList]="user"></users-list>
+    </ng-container>
   </ion-list>
 </ion-content>

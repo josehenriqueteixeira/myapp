@@ -18,6 +18,9 @@ import { PhotosPage } from '../pages/photos/photos';
 import { PhotosService } from '../service/photos';
 import { UsersAvatarPage } from '../pages/usersAvatar/users-avatar';
 import { UsersAvatarService } from '../service/users-avatar';
+import { UserListComponent } from '../components/users-list/users-list';
+import { UsersAvatarItemComponent } from '../components/user-avatar-item/user-avatar-item';
+import { UsersDetailsComponent } from '../components/users-details/users-details';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { UsersAvatarService } from '../service/users-avatar';
     UsersPage,
     AlbumsPage,
     PhotosPage,
-    UsersAvatarPage
+    UsersAvatarPage,
+    UserListComponent,
+    UsersAvatarItemComponent,
+    UsersDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,10 @@ import { UsersAvatarService } from '../service/users-avatar';
     UsersPage,
     UsersAvatarPage,
     AlbumsPage,
-    PhotosPage
+    PhotosPage,
+    UserListComponent, 
+    UsersAvatarItemComponent,
+    UsersDetailsComponent
   ],
   providers: [
     StatusBar,

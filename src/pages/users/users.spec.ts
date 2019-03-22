@@ -7,8 +7,7 @@ import { NavControllerMock } from '../../mocks/NavControllerMock';
 import { ModalControllerMock, Modal } from '../../mocks/ModalControllerMock';
 import { UsersService } from '../../service/users';
 import { UsersMock } from '../../mocks/UsersMock';
-import { By } from '@angular/platform-browser';
-import { User } from '../../interfaces/users';
+import { UserListComponent } from '../../components/users-list/users-list';
 
 describe('Users Page', () => {
   let component: UsersPage;
@@ -16,7 +15,7 @@ describe('Users Page', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersPage ],
+      declarations: [ UsersPage, UserListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { 
@@ -56,18 +55,9 @@ describe('Users Page', () => {
     expect(component.users[0].id).toBe(1);
   });  
 
-  it('Click item', () => {
-    let clickItem = component.selectedUser;
-    spyOn(clickItem, 'openSettings').and.callThrough();   
-    let el = fixture.debugElement.query(By.css('ion-item'));
-    el.triggerEventHandler('click', null);
-    expect(clickItem.openSettings).toHaveBeenCalled();
-    fixture.detectChanges();
-    const ModalControllerMock = jasmine.createSpyObj('openSettings',['present']);
-    const modalCtrlSpy = jasmine.createSpyObj('ModalController', ['create']);
-    modalCtrlSpy.create.and.callFake(function(){
-      return ModalControllerMock;      
-    })
+  it('test elements component user list', ()=> {
+    let el: HTMLElement = fixture.nativeElement.querySelector('ion-item').innerText
+    expect(el).toContain('jose henrique');
   });
 
 });

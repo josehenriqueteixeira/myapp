@@ -9,4 +9,4 @@ export class UsersAvatarItemComponent {
     
     @Input() public userAvatar: UserAvatar;
          
-  }
+}

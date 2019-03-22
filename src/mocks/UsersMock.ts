@@ -59,17 +59,6 @@ export class UsersMock{
         });
     }
 
-    selectedUser: User;
-    public modalCtrl: ModalController
-
-    openSettings(user: User) {
-        this.selectedUser = user;
-        let modal = this.modalCtrl.create(UsersDetailsComponent, {
-          user_info: this.selectedUser     
-        });
-        modal.present();
-    }
-
 }
     
 

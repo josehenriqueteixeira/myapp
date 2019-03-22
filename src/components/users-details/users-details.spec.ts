@@ -5,7 +5,7 @@ import { NavParams, NavController } from 'ionic-angular';
 import { NavParamsMock } from '../../mocks/NavParamsMock';
 import { NavControllerMock } from '../../mocks/NavControllerMock';
 
-describe('Photo details page', () => {
+describe('User details page', () => {
   let component: UsersDetailsComponent
   let fixture: ComponentFixture<UsersDetailsComponent>;
 
@@ -39,7 +39,7 @@ describe('Photo details page', () => {
   });
 
   it('test component user info', () => {
-    const teste = component.user_info = {
+    component.user_info = {
       id: 1,
       name: 'jose henrique',
       username: 'josehteixeira10',
@@ -64,7 +64,7 @@ describe('Photo details page', () => {
     }
     fixture.detectChanges();
     let list_user_info: HTMLElement = fixture.nativeElement.querySelectorAll('ion-item')[1];
-    expect(list_user_info.textContent).toContain('jose henrique');    
+    expect(list_user_info.textContent).toContain('jose henrique');   
   });
 
 });
